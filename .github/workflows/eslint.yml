@@ -9,6 +9,8 @@ on:
 jobs:
   eslint:
     runs-on: ubuntu-latest #name of docker-image
+    environment:
+        BASH_ENV: ~/.nvm/nvm.sh
     steps:
       - uses: actions/checkout@v2
       - name: Install NVM
