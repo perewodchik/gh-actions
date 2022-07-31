@@ -9,10 +9,12 @@ on:
 jobs:
   eslint:
     runs-on: ubuntu-latest #name of docker-image
+    environment:
+        BASH_ENV: ~/.nvm/nvm.sh
     steps:
       - uses: actions/checkout@v2
       - name: Install NVM
-        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v038.0/install.sh | bash
+        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash | source ~/.nvm/nvm.sh
       - name: Install Node.js
         env:
           NODE_VERSION: 14.17.0
